@@ -19,7 +19,7 @@
 
       if (!empty($user_username) && !empty($user_password)) {
         // Look up the username and password in the database
-        $query = "SELECT user_id, username FROM mismatch_user WHERE username = '$user_username' AND password = SHA('$user_password')";
+        $query = "SELECT user_id, username FROM "Your_user_table_name_here" WHERE username = '$user_username' AND password = SHA('$user_password')";
         $data = mysqli_query($dbc, $query);
 
         if (mysqli_num_rows($data) == 1) {
@@ -50,11 +50,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Mismatch - Log In</title>
+  <title>Log In</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-  <h3>Mismatch - Log In</h3>
+  <h3>Log In</h3>
 
 <?php
   // If the session var is empty, show any error message and the log-in form; otherwise confirm the log-in
